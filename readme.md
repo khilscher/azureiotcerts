@@ -65,3 +65,10 @@ A->>B: Authenticate and connect to IoT Hub using device's x.509
 
 ```
 
+## Flow: Alternative device identity certificate issuance flows
+
+As an alternative to the above EST flow using iot-identify-service, the following options are available:
+
+- Single or batch certificate issuance using IoT Trust Manager REST, SCEP, ACME, CMPv2 APIs
+- Integration with on-premise manufacturing systems, where these systems request and receive certificates and then provision these to the devices.
+- Certs and keys issued using these alternative methods could be utilized by iot-identify-service to provision the device to DPS and authenticate with IoT Hub.
