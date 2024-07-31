@@ -4,7 +4,7 @@ The following flows requires NO changes to a customer's current Microsoft Azure 
 
 References:
 - https://learn.microsoft.com/en-us/azure/iot-dps/about-iot-dps
-https://learn.microsoft.com/en-us/azure/iot-dps/tutorial-custom-hsm-enrollment-group-x509?pivots=programming-language-ansi-c
+- https://learn.microsoft.com/en-us/azure/iot-dps/tutorial-custom-hsm-enrollment-group-x509?pivots=programming-language-ansi-c
 - https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-x509#authenticate-devices-signed-with-x509-ca-certificates
 - https://azure.github.io/iot-identity-service/
 - https://github.com/Azure/iotedge/blob/main/edgelet/doc/est.md
@@ -12,9 +12,9 @@ https://learn.microsoft.com/en-us/azure/iot-dps/tutorial-custom-hsm-enrollment-g
 
 ## Flow: Setup
 
-Preconditions 
-- Customer has a root CA and one or more intermediate CAs (ICA) have already been created in DigiCert ONE CA Manager.
-- DPS and IoT Hub instances created in Azure. The flow below uses an enrollment group. Individual enrollments could be also be used.
+Prerequisites 
+- Customer has a root CA and one or more intermediate CAs (ICA) created in DigiCert ONE **CA Manager**.
+- Azure IoT DPS and IoT Hub instances created in Azure. The flow below uses a DPS **enrollment group**. Individual enrollments could be also be used.
 
 ```mermaid
 sequenceDiagram
@@ -37,8 +37,8 @@ B->>C: Link IoT Hub(s) to enrollment group and set allocation policy
 ## Flow: Device identity certificate issuance using iot-identify-service and EST
 
 Prerequisites 
-- iot-identify-service Certificates Service and Keys Service configured and running
-- A DigiCert ONE IoT Trust Manager enrollment profile is configured for EST server and uses the ICA to issue device identity certificates
+- Azure **iot-identify-service** Certificates Service and Keys Service configured and running
+- A DigiCert ONE **IoT Trust Manager** enrollment profile is configured for EST server and uses the ICA to issue device identity certificates
 
 
 ```mermaid
